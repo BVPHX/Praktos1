@@ -28,9 +28,17 @@ namespace Praktos1
 
         private void ResultOutputButton_Click(object sender, RoutedEventArgs e)
         {
-            ProgrammModules.SumHalfNumbers(Convert.ToInt32(inputBox.Text), out int result,out string numberList);
-            resultBox.Text = Convert.ToString(result);
-            numbersBox.Text = numberList;
+            try
+            {
+                ProgrammModules.SumHalfNumbers(Convert.ToInt32(inputBox.Text), out int result, out string numberList);
+                resultBox.Text = Convert.ToString(result);
+                numbersBox.Text = numberList;
+            }
+            catch
+            {
+                MessageBox.Show("Введены некорректные данные.");
+            }
+
         }
     }
 }
